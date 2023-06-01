@@ -1,0 +1,2 @@
+module GroupFinancialTransactionsHelper
+end
