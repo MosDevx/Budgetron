@@ -1,0 +1,2 @@
+class FinancialTransactionCategory < ApplicationRecord
+end

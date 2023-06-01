@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :group_financial_transactions
+  resources :categories
+  resources :financial_transaction_categories
   resources :financial_transactions
-  resources :groups
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

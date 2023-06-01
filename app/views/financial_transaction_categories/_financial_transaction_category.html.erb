@@ -1,0 +1,7 @@
+<div id="<%= dom_id financial_transaction_category %>">
+  <% if action_name != "show" %>
+    <%= link_to "Show this financial transaction category", financial_transaction_category, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this financial transaction category', edit_financial_transaction_category_path(financial_transaction_category), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
