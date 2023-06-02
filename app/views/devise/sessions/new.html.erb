@@ -1,6 +1,13 @@
-<h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= heroicon "arrow-small-left" %>
+
+
+<nav class='flex justify-between'>
+<h2 class='text-center'>LOGIN</h2>
+</nav>
+
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
