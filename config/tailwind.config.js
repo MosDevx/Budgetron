@@ -10,7 +10,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ['Proxima Nova','Inter var', ...defaultTheme.fontFamily.sans],
+      },
+      colors:{
+        'primary-blue': '#3778c2',
+        'secondary-green': '#5fb523',
+        'primary-black': '#434b54',
+        'primary-gray-1': '#545c67',
+        'primary-gray-2': '#86898e',
+        'primary-gray-3': '#989da3',
       },
     },
   },

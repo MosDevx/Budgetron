@@ -180,6 +180,9 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails_heroicon (2.1.2)
+      actionview
+      railties
     rails_live_reload (0.3.4)
       listen
       nio4r
@@ -279,6 +282,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.5)
   rails-controller-testing
+  rails_heroicon
   rails_live_reload
   rspec-rails
   selenium-webdriver
