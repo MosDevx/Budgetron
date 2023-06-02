@@ -1,0 +1,2 @@
+Change fon to proxima nova by adding file
+https://medium.com/@alexis.teh/how-to-add-custom-fonts-to-your-rails-application-992b197c7baa
