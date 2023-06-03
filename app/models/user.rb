@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 	# Associations
-	has_many :financial_transactions
-	has_many :categories
+	has_many :financial_transactions , dependent: :destroy
+	has_many :categories 						, dependent: :destroy
 
 	# Validations
 	validates :name, presence: true, length: { maximum: 50 }

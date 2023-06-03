@@ -11,7 +11,7 @@ class Category < ApplicationRecord
 
 
 	# Validations
-	validates :name, presence: true, length: { maximum: 50 }
+	validates :name, presence: true, length: { maximum: 20 }
 	validates :icon, presence: true
 	
 
