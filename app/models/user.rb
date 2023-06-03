@@ -4,10 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-	# Associations
-	has_many :financial_transactions , dependent: :destroy
-	has_many :categories 						, dependent: :destroy
+  # Associations
+  has_many :financial_transactions, dependent: :destroy
+  has_many :categories, dependent: :destroy
 
-	# Validations
-	validates :name, presence: true, length: { maximum: 50 }
+  # Validations
+  validates :name, presence: true, length: { maximum: 50 }
 end
