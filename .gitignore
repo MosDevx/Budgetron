@@ -37,3 +37,5 @@ my_notes.txt
 !/app/assets/builds/.keep
 .env
 mynotes.txt
+
+/config/credentials/production.key
