@@ -1,7 +1,10 @@
-<div id="<%= dom_id financial_transaction %>">
-  <% if action_name != "show" %>
-    <%= link_to "Show this financial transaction", financial_transaction, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this financial transaction', edit_financial_transaction_path(financial_transaction), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+<div id="<%= dom_id financial_transaction %>" class='p-2 flex-col items-start space-y-4'>
+
+<p class='text-primary-gray-1'> Transaction No. <%= financial_transaction.author_id[0,8] %></p>
+<p class='flex text-sm text-primary-gray-3'>
+  <%= heroicon "calendar"%><%= financial_transaction.created_at.strftime("%d %b %y at %l:%m %P")%>
+</p>
+
+
+
 </div>

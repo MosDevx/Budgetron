@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_02_032730) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_03_082718) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
@@ -55,6 +55,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_032730) do
   create_table "financial_transaction_categories", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.bigint "financial_transaction_id"
+    t.index ["category_id"], name: "index_ft_categories_on_category_id"
+    t.index ["financial_transaction_id"], name: "index_ft_categories_on_transaction_id"
   end
 
   create_table "financial_transactions", force: :cascade do |t|
@@ -83,5 +87,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_032730) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories", "users"
+  add_foreign_key "financial_transaction_categories", "categories"
+  add_foreign_key "financial_transaction_categories", "financial_transactions"
   add_foreign_key "financial_transactions", "users"
 end

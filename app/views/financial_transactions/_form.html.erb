@@ -1,4 +1,7 @@
 <%= form_with(model: financial_transaction, class: "contents") do |form| %>
+<div  class='flex-col pl-10 mx-auto items-center mt-10 bg-slate-100'>
+
+ 
   <% if financial_transaction.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(financial_transaction.errors.count, "error") %> prohibited this financial_transaction from being saved:</h2>
@@ -11,7 +14,47 @@
     </div>
   <% end %>
 
-  <div class="inline">
+  <%# name and amount %>
+
+  <div class="my-2 w-fit">
+    <%= form.text_field :name, class: "rounded-lg py-3 px-5 bg-gray-200 text-gray-700 font-medium", placeholder: "Name" %>   
+  </div>
+
+  <div class="mb-2">
+    <%= form.text_field :amount, class: "rounded-lg py-3 px-5 bg-gray-200 text-gray-700 inline-block font-medium", placeholder: "Amount" %>
+  </div>
+
+  <%# checkboxes for available categories %>
+  <div class=' text-gray-700 text-md pl-20 font-bold mb-2'> Add  Categories</div>
+
+  <div class="grid grid-cols-2 w-full">
+
+    <%= form.collection_check_boxes :category_ids , Category.all, :id, :name do |cb|%>
+  <div class="flex items-center space-x-2 my-2 mb-8">
+  
+
+    <%= cb.check_box  checked: (@default_category == cb.object.id ) %>
+    <div class="flex space-x-2 items-center">
+      <div class="flex-shrink-0 h-10 w-10">
+        <%= image_tag cb.object.icon , class: "h-10 w-10 " %>
+      </div>
+      
+        <div class="flex justify-between">
+          <div class="text-sm font-medium text-gray-900">
+            <%= cb.object.name %>
+          </div>
+        </div>
+    </div>
+  
+  </div>
+  <%end%>
+  
+  </div>
+
+
+  <div class=" pl-8">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+
   </div>
 <% end %>

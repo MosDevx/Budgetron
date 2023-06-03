@@ -1,0 +1,7 @@
+Change fon to proxima nova by adding file
+https://medium.com/@alexis.teh/how-to-add-custom-fonts-to-your-rails-application-992b197c7baa
+
+
+!? Add a user image to dign up form
+
+!! Check the font of created at categories index after i sort out the font

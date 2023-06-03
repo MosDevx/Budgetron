@@ -1,14 +1,29 @@
 <div class="w-full">
+<nav class="flex-col bg-primary-blue">
+ 
+  <div class="flex justify-between h-10 items-center">
+    <%= heroicon "bars-3" %>
+    <p>TRANSACTIONS</p>
+    <%= heroicon "magnifying-glass" %>
+  </div>
+
+  <div class="flex space-x-4 justify-end my-4 py-4">
+      <a href="">Most Recent</a>
+      <a href="">Most Ancient</a>
+  </div>
+</nav>
+
+
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Categories</h1>
-    <%= link_to 'New category', new_category_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
 
-  <div id="categories" class="min-w-full">
+  <div id="categories" class="min-w-full bg-slate-100 py-2">
     <%= render @categories %>
   </div>
+
+     <div class='fixed bottom-0 w-full my-4 text-center'>
+     <%= link_to 'New category', new_category_path, class: " py-3 px-5 bg-secondary-green text-white block font-medium" %>
+     </div>
 </div>
