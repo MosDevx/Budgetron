@@ -60,6 +60,9 @@ development:
 test:
   <<: *default
   database: Budgetron_test
+ username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  host: localhost
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,4 +86,4 @@ test:
 #
 production:
   <<: *default
- url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
