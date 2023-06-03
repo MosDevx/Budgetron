@@ -3,7 +3,8 @@ class FinancialTransactionsController < ApplicationController
 
   # GET /financial_transactions or /financial_transactions.json
   def index
-    @financial_transactions = FinancialTransaction.all
+    @financial_transactions = FinancialTransaction.order(created_at: :desc).all
+
   end
 
   # GET /financial_transactions/1 or /financial_transactions/1.json

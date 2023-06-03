@@ -15,4 +15,8 @@ class Category < ApplicationRecord
 	validates :icon, presence: true
 	
 
+	def total
+		financial_transactions.sum(:amount)
+	end
+
 end
