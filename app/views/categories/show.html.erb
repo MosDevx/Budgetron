@@ -41,12 +41,12 @@
     <div class="border-2 border-slate-200 mx-4 "></div>
 
     <div>
-      Render transactions here
+      <%= render @financial_transactions %>
     </div>
 
     <div class="border-2 border-slate-200 mx-4 "></div>
-    <div>
-    Total price here
+    <div class="flex justify-between pr-4">
+     <span>Total Payment</span>     <span>$<%= @total %></span>
     </div>
 
 </div>
