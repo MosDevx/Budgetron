@@ -1,4 +1,5 @@
 class FinancialTransaction < ApplicationRecord
+	before_save :create_financial_transaction_categories
 
 	belongs_to :user
 
@@ -9,9 +10,10 @@ class FinancialTransaction < ApplicationRecord
 	# Validations
 	validates :name , presence: true, length: { maximum: 50 }
 	validates :amount, presence: true, numericality: { greater_than: 0 }
+	validates :category_ids, presence: { message: "Please choose at least one checkbox" }
 
 
-	def create_financial_transaction_categories(category_ids)
+	def create_financial_transaction_categories()
 		categories = Category.where(id: category_ids)
 		categories.each do |cat|
 			financial_transaction_categories.build(category: cat)

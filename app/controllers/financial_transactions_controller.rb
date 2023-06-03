@@ -15,7 +15,9 @@ class FinancialTransactionsController < ApplicationController
 
     # @categories = Category.all
     @financial_transaction = FinancialTransaction.new
+    @default_category =  params[:category_id].to_i
 
+ 
 
     # @financial_transaction.category_id = params[:category_id]
     # puts params[:category_id]
@@ -30,20 +32,25 @@ class FinancialTransactionsController < ApplicationController
     
     
     
-    @financial_transaction = FinancialTransaction.new(name:financial_transaction_params[:name], amount:financial_transaction_params[:amount])
+    @financial_transaction = FinancialTransaction.new(financial_transaction_params)
     
     @financial_transaction.user_id = current_user.id
 
 
-    category_ids = financial_transaction_params[:category_ids].reject(&:empty?)
-    @financial_transaction.create_financial_transaction_categories(category_ids)
+    category_id = financial_transaction_params[:category_ids].reject(&:empty?)[0]
+    # @financial_transaction.create_financial_transaction_categories(category_ids)
     
-    # puts params[:category_ids]
+    # if category_ids.empty?
+    #   flash[:error] = "Please choose at least one category"
+    #   # render :new # or redirect to the appropriate action
+    # else
+    #   @financial_transaction.create_financial_transaction_categories(category_ids)
+    # end
     
     respond_to do |format|
       if @financial_transaction.save
 
-        format.html { redirect_to financial_transaction_url(@financial_transaction), notice: "Financial transaction was successfully created." }
+        format.html {redirect_to category_path(id:category_id), notice: "Financial transaction was successfully created." }
         format.json { render :show, status: :created, location: @financial_transaction }
       else
         format.html { render :new, status: :unprocessable_entity }
