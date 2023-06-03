@@ -21,11 +21,11 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-development:
-  <<: *default
-  database: Budgetron_development
-  username: <%= ENV["DATABASE_USERNAME"] %>
-  password: <%= ENV["DATABASE_PASSWORD"] %>
+# development:
+#   <<: *default
+#   database: Budgetron_development
+#   username: <%= ENV["DATABASE_USERNAME"] %>
+#   password: <%= ENV["DATABASE_PASSWORD"] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,12 +57,12 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: Budgetron_test
- username: <%= ENV["DATABASE_USERNAME"] %>
-  password: <%= ENV["DATABASE_PASSWORD"] %>
-  host: localhost
+# test:
+#   <<: *default
+#   database: Budgetron_test
+#  username: <%= ENV["DATABASE_USERNAME"] %>
+#   password: <%= ENV["DATABASE_PASSWORD"] %>
+#   host: localhost
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
