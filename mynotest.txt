@@ -3,3 +3,5 @@ https://medium.com/@alexis.teh/how-to-add-custom-fonts-to-your-rails-application
 
 
 !? Add a user image to dign up form
+
+!! Check the font of created at categories index after i sort out the font
