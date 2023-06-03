@@ -13,9 +13,9 @@ class FinancialTransactionsController < ApplicationController
   # GET /financial_transactions/new
   def new
 
+    # @categories = Category.all
     @financial_transaction = FinancialTransaction.new
 
-    @categories = Category.all
 
     # @financial_transaction.category_id = params[:category_id]
     # puts params[:category_id]
@@ -36,13 +36,13 @@ class FinancialTransactionsController < ApplicationController
 
 
     category_ids = financial_transaction_params[:category_ids].reject(&:empty?)
+    @financial_transaction.create_financial_transaction_categories(category_ids)
     
     # puts params[:category_ids]
     
     respond_to do |format|
       if @financial_transaction.save
-        @financial_transaction.create_financial_transaction_categories(category_ids)
-        
+
         format.html { redirect_to financial_transaction_url(@financial_transaction), notice: "Financial transaction was successfully created." }
         format.json { render :show, status: :created, location: @financial_transaction }
       else

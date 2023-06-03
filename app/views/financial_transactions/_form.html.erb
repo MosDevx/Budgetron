@@ -31,7 +31,7 @@
 
   <div class="grid grid-cols-2 w-full">
 
-    <%= form.collection_check_boxes :category_ids , @categories, :id, :name do |cb|%>
+    <%= form.collection_check_boxes :category_ids , Category.all, :id, :name do |cb|%>
   <div class="flex items-center space-x-2 my-2">
   
 
