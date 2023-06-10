@@ -30,7 +30,6 @@ class FinancialTransactionsController < ApplicationController
 
     category_id = financial_transaction_params[:category_ids].reject(&:empty?)[0]
 
-
     respond_to do |format|
       if @financial_transaction.save
 
