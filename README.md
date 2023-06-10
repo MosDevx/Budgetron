@@ -123,7 +123,7 @@ To exit server enter “Control (^ )+ C”
 [Budgetron](https://budgetron.onrender.com)
 
 ### Video Link 🚀
-[Video here](https://www.loom.com/share/1780ee4d994249baa6f6598a4c081961)
+[Video here](https://www.loom.com/share/8a34d5db634f4dc1a271b2849bf131f3)
 
 <!-- AUTHORS -->
 
