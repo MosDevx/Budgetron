@@ -14,7 +14,7 @@
  *= require_self
  */
 
- @font-face {
-	font-family: 'Proxima Nova';
-	src: url('Proxima_Nova.otf') format('opentype');
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('Proxima_Nova.otf') format('opentype');
 }

@@ -29,14 +29,6 @@ class FinancialTransactionsController < ApplicationController
     @financial_transaction.user_id = current_user.id
 
     category_id = financial_transaction_params[:category_ids].reject(&:empty?)[0]
-    # @financial_transaction.create_financial_transaction_categories(category_ids)
-
-    # if category_ids.empty?
-    #   flash[:error] = "Please choose at least one category"
-    #   # render :new # or redirect to the appropriate action
-    # else
-    #   @financial_transaction.create_financial_transaction_categories(category_ids)
-    # end
 
     respond_to do |format|
       if @financial_transaction.save
