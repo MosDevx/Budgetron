@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.includes(:financial_transactions).all
+    @categories = Category.includes(:financial_transactions).order(created_at: :desc).all
   end
 
   # GET /categories/1 or /categories/1.json
