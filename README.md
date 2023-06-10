@@ -7,6 +7,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [Video Link 🚀](#video-link)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -95,23 +96,34 @@ Clone this repository to your desired folder:
 ITo begin with, you need to get your Rails application server running. This is like live preview in the browser for rails applications. Run :
 
 
-```sh
- $ bin/dev
+    Install the required gems:
 
-```
+    bundle install
 
-OR
+    Set up the database:
 
-```sh
-$ rails server
+    rails db:create
 
-```
+    rails db:migrate
+
+    rake assets:precompile
+
+    To run the server:
+
+    rails s or ./bin/dev
+ 
 
 visit [localhost](http://localhost:3000/) in your browser!
 
 To exit server enter “Control (^ )+ C”
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### LIVE DEMO
+[Budgetron](https://budgetron.onrender.com)
+
+### Video Link 🚀
+[Video here](https://www.loom.com/share/1780ee4d994249baa6f6598a4c081961)
 
 <!-- AUTHORS -->
 
