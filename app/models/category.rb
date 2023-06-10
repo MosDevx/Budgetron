@@ -4,7 +4,7 @@ class Category < ApplicationRecord
 
   has_one_attached :icon
 
-  has_many :financial_transaction_categories
+  has_many :financial_transaction_categories , dependent: :destroy
   has_many :financial_transactions, through: :financial_transaction_categories
 
   # Validations
